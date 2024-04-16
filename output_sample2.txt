@@ -131,10 +131,10 @@ register table -- number of uses of each register
 register: x5, uses: 1
 Postfix: 5a>>
 addi x6, x0, 5
-srl x5, x6, x5
-root: x5
+srl x6, x6, x5
+root: x6
 register table -- number of uses of each register
-register: x5, uses: 1
+register: x6, uses: 1
 
 Expression to parse: a*1024
 variable table -- register to which var is assigned
@@ -177,10 +177,10 @@ register table -- number of uses of each register
 register: x5, uses: 1
 Postfix: 1000a*
 addi x6, x0, 1000
-mul x5, x5, x6
-root: x5
+mul x6, x6, x5
+root: x6
 register table -- number of uses of each register
-register: x5, uses: 1
+register: x6, uses: 1
 
 Expression to parse: a/1024
 variable table -- register to which var is assigned
@@ -200,10 +200,10 @@ register table -- number of uses of each register
 register: x5, uses: 1
 Postfix: 1024a/
 addi x6, x0, 1024
-div x5, x6, x5
-root: x5
+div x6, x6, x5
+root: x6
 register table -- number of uses of each register
-register: x5, uses: 1
+register: x6, uses: 1
 
 Expression to parse: (a+b)*c-e*-f
 variable table -- register to which var is assigned
@@ -263,10 +263,10 @@ register table -- number of uses of each register
 register: x5, uses: 1
 Postfix: 0~a<<
 addi x6, x0, -1
-sll x5, x6, x5
-root: x5
+sll x6, x6, x5
+root: x6
 register table -- number of uses of each register
-register: x5, uses: 1
+register: x6, uses: 1
 
 Expression to parse: ~(~0<<a)<<(b+1-a)
 variable table -- register to which var is assigned
