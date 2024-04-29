@@ -57,7 +57,6 @@ register table -- number of uses of each register
 register: x5, uses: 1
 Postfix: 8192f-
 lui x6, 2
-addi x6, x6, 0
 sub x6, x6, x5
 root: x6
 register table -- number of uses of each register
