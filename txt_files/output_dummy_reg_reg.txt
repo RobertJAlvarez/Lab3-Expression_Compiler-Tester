@@ -1,0 +1,13 @@
+Expression to parse: d*f
+variable table -- register to which var is assigned
+variable: d, register: x5
+variable: f, register: x6
+register table -- number of uses of each register
+register: x5, uses: 1
+register: x6, uses: 1
+Postfix: df*
+mul x5, x5, x6
+root: x5
+register table -- number of uses of each register
+register: x5, uses: 1
+

@@ -1,37 +1,42 @@
-Expression to parse: VAR_<<_CAR
+Expression to parse: (-b)*c
 variable table -- register to which var is assigned
-variable: VAR_, register: x5
-variable: _CAR, register: x6
+variable: b, register: x5
+variable: c, register: x6
 register table -- number of uses of each register
 register: x5, uses: 1
 register: x6, uses: 1
-Postfix: VAR__CAR<<
-sll x5, x5, x6
+Postfix: b-c*
+sub x5, x0, x5
+mul x5, x5, x6
 root: x5
 register table -- number of uses of each register
 register: x5, uses: 1
 
-Expression to parse: aRG_-PAR
+Expression to parse: -20
 variable table -- register to which var is assigned
-variable: aRG_, register: x5
-variable: PAR, register: x6
 register table -- number of uses of each register
-register: x5, uses: 1
-register: x6, uses: 1
-Postfix: aRG_PAR-
-sub x5, x5, x6
-root: x5
+Postfix: 20-
+root: -20
 register table -- number of uses of each register
 
-Expression to parse: r_am+ke_y
+Expression to parse: (~f)/d
 variable table -- register to which var is assigned
-variable: r_am, register: x5
-variable: ke_y, register: x6
+variable: d, register: x6
+variable: f, register: x5
 register table -- number of uses of each register
 register: x5, uses: 1
 register: x6, uses: 1
-Postfix: r_amke_y+
-add x5, x5, x6
+Postfix: f~d/
+xori x5, x5, -1
+div x5, x5, x6
 root: x5
+register table -- number of uses of each register
+register: x5, uses: 1
+
+Expression to parse: ~980
+variable table -- register to which var is assigned
+register table -- number of uses of each register
+Postfix: 980~
+root: -981
 register table -- number of uses of each register
 
