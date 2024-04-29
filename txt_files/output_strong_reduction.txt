@@ -1,32 +1,32 @@
-Expression to parse: a*2
+Expression to parse: a*16
 variable table -- register to which var is assigned
 variable: a, register: x5
 register table -- number of uses of each register
 register: x5, uses: 1
-Postfix: a2*
-slli x5, x5, 1
+Postfix: a16*
+slli x5, x5, 4
 root: x5
 register table -- number of uses of each register
 register: x5, uses: 1
 
-Expression to parse: c/8
+Expression to parse: c/32
 variable table -- register to which var is assigned
 variable: c, register: x5
 register table -- number of uses of each register
 register: x5, uses: 1
-Postfix: c8/
-srai x5, x5, 3
+Postfix: c32/
+srai x5, x5, 5
 root: x5
 register table -- number of uses of each register
 register: x5, uses: 1
 
-Expression to parse: 4*b
+Expression to parse: 8*b
 variable table -- register to which var is assigned
 variable: b, register: x5
 register table -- number of uses of each register
 register: x5, uses: 1
-Postfix: 4b*
-slli x5, x5, 2
+Postfix: 8b*
+slli x5, x5, 3
 root: x5
 register table -- number of uses of each register
 register: x5, uses: 1

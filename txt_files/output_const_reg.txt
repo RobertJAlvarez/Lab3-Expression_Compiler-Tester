@@ -1,26 +1,28 @@
-Expression to parse: ((3<<a)+b)*((8|c)/a)>>((3&b)+(7/a))<<a
+Expression to parse: ((1>>f)+b)*((3|c)/f)>>((3&b)+(7/b))<<a
 variable table -- register to which var is assigned
-variable: a, register: x5
+variable: a, register: x8
 variable: b, register: x6
 variable: c, register: x7
+variable: f, register: x5
 register table -- number of uses of each register
-register: x5, uses: 4
-register: x6, uses: 2
+register: x5, uses: 2
+register: x6, uses: 3
 register: x7, uses: 1
-Postfix: 3a<<b+8c|a/*3b&7a/+>>a<<
-addi x8, x0, 3
-sll x8, x8, x5
-add x8, x8, x6
-ori x7, x7, 8
-div x7, x7, x5
-mul x8, x8, x7
-andi x6, x6, 3
-addi x7, x0, 7
-div x7, x7, x5
-add x6, x6, x7
-srl x8, x8, x6
-sll x8, x8, x5
-root: x8
-register table -- number of uses of each register
 register: x8, uses: 1
+Postfix: 1f>>b+3c|f/*3b&7b/+>>a<<
+addi x9, x0, 1
+srl x9, x9, x5
+add x9, x9, x6
+ori x7, x7, 3
+div x7, x7, x5
+mul x9, x9, x7
+andi x5, x6, 3
+addi x7, x0, 7
+div x7, x7, x6
+add x5, x5, x7
+srl x9, x9, x5
+sll x9, x9, x8
+root: x9
+register table -- number of uses of each register
+register: x9, uses: 1
 

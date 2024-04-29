@@ -1,127 +1,131 @@
-Expression to parse: a*b
+Expression to parse: d*f
 variable table -- register to which var is assigned
-variable: a, register: x5
-variable: b, register: x6
+variable: d, register: x5
+variable: f, register: x6
 register table -- number of uses of each register
 register: x5, uses: 1
 register: x6, uses: 1
-Postfix: ab*
+Postfix: df*
 mul x5, x5, x6
 root: x5
 register table -- number of uses of each register
 register: x5, uses: 1
 
-Expression to parse: a*23
+Expression to parse: c*20
 variable table -- register to which var is assigned
-variable: a, register: x5
+variable: c, register: x5
 register table -- number of uses of each register
 register: x5, uses: 1
-Postfix: a23*
-addi x6, x0, 23
+Postfix: c20*
+addi x6, x0, 20
 mul x5, x5, x6
 root: x5
 register table -- number of uses of each register
 register: x5, uses: 1
 
-Expression to parse: b/3
+Expression to parse: b/9
 variable table -- register to which var is assigned
 variable: b, register: x5
 register table -- number of uses of each register
 register: x5, uses: 1
-Postfix: b3/
-addi x6, x0, 3
+Postfix: b9/
+addi x6, x0, 9
 div x5, x5, x6
 root: x5
 register table -- number of uses of each register
 register: x5, uses: 1
 
-Expression to parse: c-7
+Expression to parse: c-2
 variable table -- register to which var is assigned
 variable: c, register: x5
 register table -- number of uses of each register
 register: x5, uses: 1
-Postfix: c7-
-addi x5, x5, -7
+Postfix: c2-
+addi x5, x5, -2
 root: x5
 register table -- number of uses of each register
 register: x5, uses: 1
 
-Expression to parse: d+987
+Expression to parse: d+1234
 variable table -- register to which var is assigned
 variable: d, register: x5
 register table -- number of uses of each register
 register: x5, uses: 1
-Postfix: d987+
-addi x5, x5, 987
+Postfix: d1234+
+addi x5, x5, 1234
 root: x5
 register table -- number of uses of each register
 register: x5, uses: 1
 
-Expression to parse: 4/f
+Expression to parse: 7/c
 variable table -- register to which var is assigned
-variable: f, register: x5
+variable: c, register: x5
 register table -- number of uses of each register
 register: x5, uses: 1
-Postfix: 4f/
-addi x6, x0, 4
+Postfix: 7c/
+addi x6, x0, 7
 div x6, x6, x5
 root: x6
 register table -- number of uses of each register
 register: x6, uses: 1
 
-Expression to parse: 3&a
+Expression to parse: 9&b
 variable table -- register to which var is assigned
-variable: a, register: x5
+variable: b, register: x5
 register table -- number of uses of each register
 register: x5, uses: 1
-Postfix: 3a&
-andi x5, x5, 3
+Postfix: 9b&
+andi x5, x5, 9
 root: x5
 register table -- number of uses of each register
 register: x5, uses: 1
 
-Expression to parse: 4>>2
+Expression to parse: 10>>3
 variable table -- register to which var is assigned
 register table -- number of uses of each register
-Postfix: 42>>
+Postfix: 103>>
 root: 1
 register table -- number of uses of each register
 
-Expression to parse: (-d)*d
+Expression to parse: (-b)*c
 variable table -- register to which var is assigned
-variable: d, register: x5
+variable: b, register: x5
+variable: c, register: x6
 register table -- number of uses of each register
-register: x5, uses: 2
-Postfix: d-d*
-sub x6, x0, x5
-mul x6, x6, x5
-root: x6
-register table -- number of uses of each register
+register: x5, uses: 1
 register: x6, uses: 1
+Postfix: b-c*
+sub x5, x0, x5
+mul x5, x5, x6
+root: x5
+register table -- number of uses of each register
+register: x5, uses: 1
 
-Expression to parse: -1
+Expression to parse: -20
 variable table -- register to which var is assigned
 register table -- number of uses of each register
-Postfix: 1-
-root: -1
+Postfix: 20-
+root: -20
 register table -- number of uses of each register
 
-Expression to parse: (~c)/c
+Expression to parse: (~f)/d
 variable table -- register to which var is assigned
-variable: c, register: x5
+variable: d, register: x6
+variable: f, register: x5
 register table -- number of uses of each register
-register: x5, uses: 2
-Postfix: c~c/
-xori x6, x5, -1
-div x6, x6, x5
-root: x6
-register table -- number of uses of each register
+register: x5, uses: 1
 register: x6, uses: 1
+Postfix: f~d/
+xori x5, x5, -1
+div x5, x5, x6
+root: x5
+register table -- number of uses of each register
+register: x5, uses: 1
 
-Expression to parse: ~230
+Expression to parse: ~980
 variable table -- register to which var is assigned
 register table -- number of uses of each register
-Postfix: 230~
-root: -231
+Postfix: 980~
+root: -981
 register table -- number of uses of each register
 
